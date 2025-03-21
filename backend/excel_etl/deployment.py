@@ -36,15 +36,19 @@ STORAGES = {
 ,
     },
 }
-CONNECTION=os.environ['AZURE_POSTGRESQL_CONNECTIONSTRING']
-CONNECTION_STR ={pair.split('=')[0]:pair.split('=')[1] for pair in CONNECTION.split(' ')}
+CONNECTION = os.environ['AZURE_POSTGRESQL_CONNECTIONSTRING']
+
+# Parse the connection string
+params = dict(pair.split('=') for pair in CONNECTION.split(' ') if '=' in pair)
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-            "NAME":CONNECTION_STR['dbname'],
-            "USER":CONNECTION_STR['user'],
-            "PASSWORD" :CONNECTION_STR['password'],
-            "HOST":CONNECTION_STR['host'],
+        "NAME": params['dbname'],
+        "USER": params['user'],
+        "PASSWORD": params['password'],
+        "HOST": params['host'],
+        "OPTIONS": {"sslmode": "require"},  # Ensure SSL is enabled
     }
 }
 
