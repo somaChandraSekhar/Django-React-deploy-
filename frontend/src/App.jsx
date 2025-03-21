@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Excel ETL Dashboard</h1>
+      <h1>Excel ETL PROJECT deploying in Azure</h1>
       <div className="container">
         <div className="sidebar">
           <FileUpload />
