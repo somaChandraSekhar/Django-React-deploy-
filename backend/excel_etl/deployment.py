@@ -3,7 +3,7 @@ from .settings import *
 from .settings import BASE_DIR
 
 
-print("WEBSITE_HOSTNAME:", os.environ.get('WEBSITE_HOSTNAME'))
+
 ALLOWED_HOSTS =[os.environ['WEBSITE_HOSTNAME']]
 
 CSRF_TRUSTED_ORIGINS =['https://'+os.environ['WEBSITE_HOSTNAME']]
