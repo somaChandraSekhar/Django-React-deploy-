@@ -46,7 +46,6 @@ jobs:
         with:
           name: python-app
           path: |
-            cd backend/
             release.zip
             !venv/
 
