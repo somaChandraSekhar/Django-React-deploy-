@@ -45,7 +45,7 @@ DATABASES = {
             "USER":CONNECTION_STR['user'],
             "PASSWORD" :CONNECTION_STR['password'],
             "HOST":CONNECTION_STR['host'],
-            "OPTIONS": {"sslmode": "require"}, 
+            
     }
 }
 
